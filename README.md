@@ -1,5 +1,6 @@
 Natours
-Natours is a full-featured tour booking application, developed as part of the "Node.js, Express, MongoDB & More: The Complete Bootcamp" course by Jonas Schmedtmann. This project demonstrates modern web development practices using Node.js, Express, and MongoDB.
+Natours is a full-featured tour booking application, developed as part of the "Node.js, Express, MongoDB & More: The Complete Bootcamp" course by Jonas Schmedtmann.
+This project demonstrates modern web development practices using Node.js, Express, and MongoDB.
 
 Getting Started
 Prerequisites
