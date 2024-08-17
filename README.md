@@ -49,8 +49,3 @@ Production Mode:
 
 npm start
 
-Acknowledgements
-This project was developed as part of the "Node.js, Express, MongoDB & More: The Complete Bootcamp" course by Jonas Schmedtmann. Full credit for the course content and project concept goes to him.
-
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
