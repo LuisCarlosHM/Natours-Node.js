@@ -18,7 +18,7 @@ Before running the application, ensure you have the following installed:
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your config.env file
+To run this project, create the file config.env on your root folder, you will need to add the following environment variables to your file:
 
 `NODE_ENV = development/production`
 
