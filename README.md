@@ -1,7 +1,4 @@
-Here's the README.md content again, and it should look formatted when pasted correctly:
 
-markdown
-Copiar código
 # Natours
 
 Natours is a full-featured tour booking application, developed as part of the _"Node.js, Express, MongoDB & More: The Complete Bootcamp"_ course by Jonas Schmedtmann. This project demonstrates modern web development practices using Node.js, Express, and MongoDB.
@@ -15,14 +12,11 @@ Before running the application, ensure you have the following installed:
 -**MongoDB**: For database storage, either locally or via a cloud service like MongoDB Atlas.
 
 ### Installation1.**Clone the repository**:
-
-   ```bash
    git clone https://github.com/your-username/natours.git
    cd natours
 Install dependencies:
 
-bash
-Copiar código
+
 npm install
 Configuration
 Before starting the application, you need to configure environment variables:
@@ -31,8 +25,7 @@ Create a config.env file in the root directory of the project.
 
 Add the following content to your config.env file, replacing placeholders with your actual configuration:
 
-plaintext
-Copiar código
+
 NODE_ENV=development
 PORT=your_port_number
 PASSWORD=your_password
@@ -50,19 +43,14 @@ To start the application, use the following commands:
 
 Development Mode (with debugging enabled):
 
-bash
-Copiar código
 npm run debug
+
 Production Mode:
 
-bash
-Copiar código
 npm start
-Acknowledgements
-This project was developed as part of the "Node.js, Express, MongoDB & More: The Complete Bootcamp" course by Jonas Schmedtmann. Full credit for the course content and project concept goes to him.
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+
 
 markdown
 Copiar código
