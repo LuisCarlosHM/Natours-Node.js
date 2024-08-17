@@ -1,6 +1,5 @@
 Natours
-Natours is a full-featured tour booking application, developed as part of the "Node.js, Express, MongoDB & More: The Complete Bootcamp" course by Jonas Schmedtmann.
-This project demonstrates modern web development practices using Node.js, Express, and MongoDB.
+Natours is a full-featured tour booking application, developed as part of the "Node.js, Express, MongoDB & More: The Complete Bootcamp" course by Jonas Schmedtmann. This project demonstrates modern web development practices using Node.js, Express, and MongoDB.
 
 Getting Started
 Prerequisites
@@ -12,13 +11,14 @@ MongoDB: For database storage, either locally or via a cloud service like MongoD
 Installation
 Clone the repository:
 
+bash
+Copiar código
 git clone https://github.com/your-username/natours.git
 cd natours
-
 Install dependencies:
 
+Copiar código
 npm install
-
 Configuration
 Before starting the application, you need to configure environment variables:
 
@@ -26,6 +26,8 @@ Create a config.env file in the root directory of the project.
 
 Add the following content to your config.env file, replacing placeholders with your actual configuration:
 
+makefile
+Copiar código
 NODE_ENV=development
 PORT=your_port_number
 PASSWORD=your_password
@@ -38,15 +40,17 @@ EMAIL_USERNAME=your_email_username
 EMAIL_PASSWORD=your_email_password
 EMAIL_HOST=your_email_host
 EMAIL_PORT=your_email_port
-
 Running the Application
 To start the application, use the following commands:
 
 Development Mode (with debugging enabled):
 
+arduino
+Copiar código
 npm run debug
-
 Production Mode:
 
+sql
+Copiar código
 npm start
-
+Acknowledge
