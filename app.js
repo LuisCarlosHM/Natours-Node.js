@@ -7,7 +7,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const AppError = require('./utils/appError');
 const rateLimit = require('express-rate-limit');
-const healmet = require('helmet');
+const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
@@ -26,7 +26,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Security HTTP headers
-app.use(healmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://api.mapbox.com', 'blob:', "'self'"],
+      connectSrc: [
+        "'self'",
+        'https://api.mapbox.com',
+        'https://events.mapbox.com',
+      ],
+    },
+  }),
+);
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
