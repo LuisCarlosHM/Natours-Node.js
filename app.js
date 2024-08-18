@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
@@ -11,10 +10,20 @@ const healmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const path = require('path');
+
+const app = express();
 
 // 0. GLOBAL MIDDLEWARES
 
 // 1. MIDDLEWARES
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Security HTTP headers
 app.use(healmet());
 
@@ -56,9 +65,6 @@ app.use(
   }),
 );
 
-// Serving static files
-app.use(express.static(`${__dirname}/public`));
-
 // Test middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
@@ -66,6 +72,25 @@ app.use((req, res, next) => {
 });
 
 // 2. ROUTES
+
+app.get('/', (req, res) => {
+  res.status(200).render('base', {
+    tour: 'The Forest Hiker',
+    user: 'Luis',
+  });
+});
+
+app.get('/overview', (req, res) => {
+  res.status(200).render('overview', {
+    title: 'All Tours',
+  });
+});
+
+app.get('/overview', (req, res) => {
+  res.status(200).render('overview', {
+    title: 'All Tours',
+  });
+});
 
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
