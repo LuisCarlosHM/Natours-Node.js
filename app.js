@@ -12,6 +12,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -30,11 +31,18 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", 'https://api.mapbox.com', 'blob:', "'self'"],
+      scriptSrc: [
+        "'self'",
+        'https://api.mapbox.com',
+        'https://cdn.jsdelivr.net',
+        'blob:',
+        "'self'",
+      ],
       connectSrc: [
         "'self'",
         'https://api.mapbox.com',
         'https://events.mapbox.com',
+        'https://cdn.jsdelivr.net',
       ],
     },
   }),
@@ -56,6 +64,7 @@ app.use('/api', limiter);
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
+app.use(cookieParser());
 
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
